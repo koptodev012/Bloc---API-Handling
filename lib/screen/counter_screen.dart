@@ -43,24 +43,16 @@ class _CounterScreenState extends State<CounterScreen> {
               padding: const EdgeInsets.all(8.0),
               child: BlocBuilder<CounterCubit, CounterState>(
                 builder: (context, state) {
-                  if (state is IncrementState) {
+                  if (state is CounterInitial) {
                     return Text(
                       state.val.toString(),
                       style: TextStyle(fontSize: 30),
                     );
                   }
-
-                     if (state is DecrementState) {
-                    return Text(
-                      state.val.toString(),
-                      style: TextStyle(fontSize: 30),
-                    );
-                  }
-
-                  return  Text(
-                      "0",
-                      style: TextStyle(fontSize: 30),
-                    );
+                  return Text(
+                    count.toString(),
+                    style: TextStyle(fontSize: 30),
+                  );
                 },
               ),
             ),
