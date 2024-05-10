@@ -17,7 +17,9 @@ class CounterCubit extends Cubit<CounterState> {
   }
 
   void decrement() {
-    count--;
-    emit(DecrementState(val: count));
+    if (count > 0) {
+      count--;
+      emit(DecrementState(val: count));
+    }
   }
 }
